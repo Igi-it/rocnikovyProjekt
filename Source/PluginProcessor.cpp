@@ -222,6 +222,10 @@ ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts)
     settings.lowCutSlope = static_cast<Slope>(apvts.getRawParameterValue("LowCut Slope")->load());
     settings.highCutSlope = static_cast<Slope>(apvts.getRawParameterValue("HighCut Slope")->load());
     
+
+    settings.LightModeOn = apvts.getRawParameterValue("Light Mode On")->load() > 0.5f;
+
+
     return settings;
 }
 
@@ -315,6 +319,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout SimpleEQAudioProcessor::crea
     
     layout.add(std::make_unique<juce::AudioParameterChoice>("LowCut Slope", "LowCut Slope", stringArray, 0));
     layout.add(std::make_unique<juce::AudioParameterChoice>("HighCut Slope", "HighCut Slope", stringArray, 0));
+
+    layout.add(std::make_unique < juce::AudioParameterBool>("Light Mode On", "Light Mode On", false));
     
     return layout;
 }

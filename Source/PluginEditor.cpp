@@ -43,7 +43,7 @@ highCutSlopeSliderAttachment(audioProcessor.apvts, "HighCut Slope", highCutSlope
 	PeakLabel.setJustificationType(juce::Justification::centred);
 
     
-    setSize (600, 400);
+    setSize (1900, 1000);
 }
 
 SimpleEQAudioProcessorEditor::~SimpleEQAudioProcessorEditor()
@@ -51,13 +51,20 @@ SimpleEQAudioProcessorEditor::~SimpleEQAudioProcessorEditor()
 }
 
 //==============================================================================
-void SimpleEQAudioProcessorEditor::paint (juce::Graphics& g)
+void SimpleEQAudioProcessorEditor::paint(juce::Graphics& g)
 {
     using namespace juce;
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (Colours::black);
-
+    //g.fillAll (Colours::black);
+    //Image background = ImageCache::getFromMemory(BinaryData::texture169_png, BinaryData::texture169_pngSize);
+    //g.drawImageAt(background, 0, 0);
 }
+
+/*void paint(Graphics& g) {
+    Image background = ImageCache::getFromMemory (BinaryData::_1_png, BinaryData::_1_pngSize);
+    g.drawImageAt(background, 0, 0);
+
+}*/
 
 void SimpleEQAudioProcessorEditor::resized()
 {
@@ -69,6 +76,8 @@ void SimpleEQAudioProcessorEditor::resized()
     
     auto lowCutArea = bounds.removeFromLeft(bounds.getWidth() * 0.33);
     auto highCutArea = bounds.removeFromRight(bounds.getWidth() * 0.5);
+
+    LightModeOn.setBounds(150, 75, 100, 50);
     
     lowCutFreqSlider.setBounds(lowCutArea.removeFromTop(lowCutArea.getHeight() * 0.5));
     lowCutSlopeSlider.setBounds(lowCutArea);
@@ -92,6 +101,7 @@ std::vector<juce::Component*> SimpleEQAudioProcessorEditor::getComps()
         &lowCutFreqSlider,
         &highCutFreqSlider,
         &lowCutSlopeSlider,
-        &highCutSlopeSlider
+        &highCutSlopeSlider,
+        &LightModeOn
     };
 }
