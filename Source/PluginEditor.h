@@ -16,6 +16,9 @@ struct CustomRotarySlider : juce::Slider
     CustomRotarySlider() : juce::Slider(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,
                                         juce::Slider::TextEntryBoxPosition::NoTextBox)
     {
+        setColour(juce::Slider::thumbColourId, juce::Colours::black);
+        setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::grey);
+        setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::white);
         
     }
 };
@@ -32,6 +35,7 @@ public:
     //==============================================================================
     void paint (juce::Graphics&) override;
     void resized() override;
+
 
 private:
 
@@ -58,16 +62,14 @@ private:
                 highCutFreqSliderAttachment,
                 lowCutSlopeSliderAttachment,
                 highCutSlopeSliderAttachment;
-
-    juce::ToggleButton LightModeOn;
     
     std::vector<juce::Component*> getComps();
     
     MonoChain monoChain;
 
-	juce::Label HighCutLabel;
+	/*juce::Label HighCutLabel;
 	juce::Label LowCutLabel;
-	juce::Label PeakLabel;
+	juce::Label PeakLabel;*/
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessorEditor)
 };

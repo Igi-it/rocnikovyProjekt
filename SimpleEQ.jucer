@@ -5,7 +5,7 @@
   <MAINGROUP id="s3UVmO" name="SimpleEQ">
     <GROUP id="{45ED60DC-DDBB-4D79-2BF0-132D9C53D097}" name="Source">
       <GROUP id="{1C47623D-B793-8614-99FF-BDBBA8C7AF4A}" name="IMG">
-        <FILE id="B84ba7" name="texture169.png" compile="0" resource="1" file="Source/IMG/texture169.png"/>
+        <FILE id="efveih" name="texture169.png" compile="0" resource="1" file="Source/IMG/texture169.png"/>
       </GROUP>
       <FILE id="Zxhhqg" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
