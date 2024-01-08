@@ -17,7 +17,7 @@ struct CustomRotarySlider : juce::Slider
                                         juce::Slider::TextEntryBoxPosition::NoTextBox)
     {
         setColour(juce::Slider::thumbColourId, juce::Colours::black);
-        setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::grey);
+        setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::blue);
         setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::white);
         
     }

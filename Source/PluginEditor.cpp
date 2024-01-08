@@ -42,7 +42,7 @@ highCutSlopeSliderAttachment(audioProcessor.apvts, "HighCut Slope", highCutSlope
 	PeakLabel.attachToComponent(&peakFreqSlider, false);
 	PeakLabel.setJustificationType(juce::Justification::centred);*/
 
-    setSize (1280, 720);
+    setSize (1440, 900);
 }
 
 SimpleEQAudioProcessorEditor::~SimpleEQAudioProcessorEditor()
@@ -55,7 +55,7 @@ void SimpleEQAudioProcessorEditor::paint(juce::Graphics& g)
     using namespace juce;
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     //g.fillAll (Colours::black);
-    Image background = ImageCache::getFromMemory(BinaryData::texture169_png, BinaryData::texture169_pngSize);
+    Image background = ImageCache::getFromMemory(BinaryData::IGItEX3_jpg, BinaryData::IGItEX3_jpgSize);
     g.drawImageAt(background, 0, 0);
 }
 
